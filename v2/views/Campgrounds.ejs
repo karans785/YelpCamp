@@ -1,0 +1,29 @@
+<%include partials/header.ejs%>
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to the CampGrounds</h1>
+           
+                <p>These are the currently available campgrounds that you can see : </p>
+                <a href="/"><button class="btn btn-primary" type="submit">Home</button></a>
+                <a href="/new"><button class="btn btn-primary" type="submit">Add CampGround</button></a>
+        </div>
+    </div>
+
+<div class="row text-center" style="display:flex;flex-wrap:wrap;">
+<% camps.forEach(function(camp){ %>
+        
+        <div class="col-lg-3 col-md-4  col-sm-6">
+                <div class="thumbnail ">
+                    
+                        <img class="card-img-top" src="<%= camp.image %>" alt="Card image cap">
+                        <div class="card-body"> 
+                             <h4><%= camp.name %></h4>
+                        </div>
+                </div>
+        </div>
+<% }); %>
+</div>
+</div>
+</div>
+<%include partials/footer.ejs%>
